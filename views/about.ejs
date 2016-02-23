@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My First App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<div class="container">
+					<h1>My Blog</h1>
+					<a href="/" class="btn btn-primary btn-lg">Home</a>
+					<a href="/about" class="btn btn-primary btn-lg">Blog</a>
+					<p> <%= time %> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 clearfix">
+				<div class="post-outer">
+					<div class="panel panel-default">
+					  <div class="panel-body">
+						<h2 class="post-title entry-title">Apples and Ideas</h2>
+						<div class="post-body">
+							<blockquote>
+							  <p>If you have an apple and I have an apple and we exchange these apples then you and I will still each have one apple. But if you have an idea and I have an idea and we exchange these ideas, then each of us will have two ideas.</p>
+							  <footer>Posted by <span>George Bernard Shaw</span> on <span>2015-01-01</span></footer>
+							</blockquote>
+						</div>
+					  </div>
+					</div>
+				</div>
+				<div class="post-outer">
+					<div class="panel panel-default">
+					  <div class="panel-body">
+						<h2 class="post-title entry-title">Post Two</h2>
+						<div class="post-body">
+							<blockquote>
+							  <p>Yo, this is my Second blog post</p>
+							  <footer>Posted by John Seyfert on <span>2015-01-22</span></footer>
+							</blockquote>
+						</div>
+					  </div>
+					</div>
+				</div>
+				<div class="post-outer">
+					<div class="panel panel-default">
+					  <div class="panel-body">
+						<h2 class="post-title entry-title">Post Three</h2>
+						<div class="post-body">
+							<blockquote>
+							  <p>Hell Yeah, this is my Thirsd blog post</p>
+							  <footer>Posted by John Seyfert on <span>2015-02-01</span></footer>
+							</blockquote>
+						</div>
+					  </div>
+					</div>
+				</div>
+			</div>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 clearfix">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Add New Post</h3>
+					</div>
+					<div class="panel-body">
+						<form action="" method="POST" class="form-horizontal" role="form">
+						    <div class="col-sm-12">
+						        <div class="row form-group">
+						            <div class="col-xs-4">
+						                <input class="form-control" name="name" placeholder="Name" required="" type="text">
+						            </div>
+						            <div class="col-xs-8">
+						                <input class="form-control" name="title" placeholder="Title" required="" type="text">
+						            </div>
+						        </div>
+						        <div class="row form-group">
+						            <div class="col-xs-12">
+						                <!-- <input class="form-control" placeholder="Body" required="" type="homepage"> -->
+						                <textarea class="form-control" rows="5" placeholder="Body" id="body"></textarea>
+						            </div>
+						        </div>
+						        <div class="row form-group">
+						            <div class="col-xs-12">
+						                <button class="btn btn-info pull-right">Add Post</button>
+						            </div>
+						        </div>
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+	
