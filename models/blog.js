@@ -6,7 +6,8 @@ var Schema       = mongoose.Schema;
 var BlogSchema   = new Schema({
     posterName: String,
     postTitle: String,
-    postBody: String
+    postBody: String,
+    postDate: String,
 });
 
 

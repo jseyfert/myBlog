@@ -1,32 +1,23 @@
-
-// var killblog = function() {
-// 	var id = $(event.target).closest('tr').attr('id');	
-// 	var blog= $(event.target).closest('tr');	
-
-// 	$.ajax({
-// 		url: '/api/blogs/' + id, 
-// 		method: 'DELETE' ,
-// 	}).done(function(){
-// 		blog.remove();
-// 	});
-// };
+// var dateFormat = require('./dateformat');
+// var now = new Date();
 
 var addBlog = function(event) {
 	event.preventDefault();
+	 console.log('addBlog text');
 	
 	var posterName = $('#posterName').val();
 	var postTitle = $('#postTitle').val();
 	var postBody = $('#postBody').val();
+	// var postDate = dateFormat(now, "mmmm dS, yyyy");
 	var $table = $('#blogList');
-	// console.log(postBody);
+	
 	var blog = {
 		posterName: posterName,
 		postTitle: postTitle,
-		postBody: postBody
+		postBody: postBody,
+	    // postDate: postDate,
 	};
 			
-	
-
 	if (posterName && postTitle && postBody){
 		$.ajax({
 			url: '/api/blogs/', 
@@ -42,28 +33,27 @@ var addBlog = function(event) {
 						<div class="post-body">\
 							<blockquote>\
 							  <p>' + postBody + '</p>\
-							  <footer>Posted by <span>' + posterName + '</span> on <span>2015-01-01</span></footer>\
+							  <footer>Posted by <span>' + posterName + '</span> on <span></span></footer>\
 							</blockquote>\
 						</div>\
 					  </div>\
 					</div>\
 				</div>');
 
-		// clearInput($('#posterName'));
-		// clearInput($('#postTitle'));
-		// clearInput($('#postBody'));
+		clearInput($('#posterName'));
+		clearInput($('#postTitle'));
+		clearInput($('#postBody'));
 
-		// $('#addblog').on('click', addBlog);
 		});
 	} else {
 		alert("you must fill out form");
 	}
 };
 
-//clear inputs
-// function clearInput ($input) {
-// 	$input.val("");
-// }
+function clearInput ($input) {
+	$input.val("");
+}
 
-$('#addblog').on('click', addBlog);
-// $('.killblog').on('click', killblog);
+$('#addBlog').on('click', addBlog);
+
+

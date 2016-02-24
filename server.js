@@ -30,7 +30,7 @@ app.get('/blog', function(req, res){
                 res.json(err);
             } else {
                 var reverseBlog = blogs.reverse();
-                console.log(reverseBlog);
+                // console.log(reverseBlog);
                 res.render('blog', {blogList: reverseBlog});
                 // console.log(blogs);
             } 

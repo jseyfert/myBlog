@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Blog = require('../models/blog');
+var dateFormat = require('dateformat');
+var now = new Date();
 
 router.route('/blogs')//.post()  we could also add it like this if we werent chaining
 
@@ -10,7 +12,8 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
         var blog = new Blog();      // create a new instance of the Bear model
         blog.posterName = req.body.posterName;  // set the blogs name (comes from the request)
         blog.postTitle = req.body.postTitle; 
-        blog.postBody = req.body.postBody; 
+        blog.postBody = req.body.postBody;
+        blog.postDate = dateFormat(now, "mmmm dS, yyyy"); 
         console.log(blog);	
         blog.save(function(err, blog) { // save(mongoos method) the blog and check for errors
         	if (err) {
@@ -30,7 +33,18 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
     			res.json(blogs);
     		}
     	});
-    });
+    })
+
+	.delete(function(req, res) { //delete bear by specific id
+			 // console.log(res);
+		Blog.remove(function(err, blog) {
+			if (err) {
+				res.json(err);
+			} else {
+				res.json({title: 'the shits gone!'});
+			}
+		});
+	});
 
 router.route('/blogs/:blog_id') //router.route is express terminology
 
@@ -64,17 +78,17 @@ router.route('/blogs/:blog_id') //router.route is express terminology
 				});	
 			}
 		});
-	})
-
-	.delete(function(req, res) { //delete bear by specific id
-			 // console.log(res);
-		Blog.remove({_id: req.params.blog_id}, function(err, blog) {
-			if (err) {
-				res.json(err);
-			} else {
-				res.json({title: 'deleted'});
-			}
-		});
 	});
+
+	// .delete(function(req, res) { //delete bear by specific id
+	// 		 // console.log(res);
+	// 	Blog.remove({_id: req.params.blog_id}, function(err, blog) {
+	// 		if (err) {
+	// 			res.json(err);
+	// 		} else {
+	// 			res.json({title: 'deleted'});
+	// 		}
+	// 	});
+	// });
 
 	module.exports = router;

@@ -33,7 +33,7 @@
 						<div class="post-body">
 							<blockquote>
 							  <p> <%= blogList[i].postBody %> </p>
-							  <footer>Posted by <span> <%= blogList[i].posterName %> </span> on <span>2015-01-01</span></footer>
+							  <footer>Posted by <span> <%= blogList[i].posterName %> </span> on <span><%= blogList[i].postDate %> </span></footer>
 							</blockquote>
 						</div>
 					  </div>
@@ -84,8 +84,11 @@
 						            </div>
 						        </div>
 						        <div class="row form-group">
-						            <div class="col-xs-12">
-						                <button class="btn btn-info pull-right" id="addblog">Add Post</button>
+						            <div class="col-xs-11">
+						                <button class="btn btn-info pull-right" id="addBlog">Add Post</button>
+						            </div>
+<!-- 						            <div class="col-xs-2">
+						                <button class="btn btn-danger pull-right" id="deleteBlog">Delete All</button> -->
 						            </div>
 						        </div>
 						    </div>
