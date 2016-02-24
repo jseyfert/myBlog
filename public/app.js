@@ -1,51 +1,59 @@
 
-//remove a bear
-var killBear = function() {
-	var id = $(event.target).closest('tr').attr('id');	
-	var bear= $(event.target).closest('tr');	
+// var killblog = function() {
+// 	var id = $(event.target).closest('tr').attr('id');	
+// 	var blog= $(event.target).closest('tr');	
 
-	$.ajax({
-		url: '/api/bears/' + id, 
-		method: 'DELETE' ,
-	}).done(function(){
-		bear.remove();
-	});
-};
+// 	$.ajax({
+// 		url: '/api/blogs/' + id, 
+// 		method: 'DELETE' ,
+// 	}).done(function(){
+// 		blog.remove();
+// 	});
+// };
 
-
-// add a bear
-var addBear = function(event) {
+var addBlog = function(event) {
 	event.preventDefault();
 	
-	var name = $('#name').val();
-	var age = $('#age').val();
-	var gender = $('#gender').val();
-	var $table = $('#bearTable');
-
-	var bear = {
-		name: name,
-		age: age,
-		gender: gender
+	var posterName = $('#posterName').val();
+	var postTitle = $('#postTitle').val();
+	var postBody = $('#postBody').val();
+	var $table = $('#blogList');
+	// console.log(postBody);
+	var blog = {
+		posterName: posterName,
+		postTitle: postTitle,
+		postBody: postBody
 	};
+			
+	
 
-	if (name && age && gender){
+	if (posterName && postTitle && postBody){
 		$.ajax({
-			url: '/api/bears/', 
+			url: '/api/blogs/', 
 			method: 'POST',
-			data: bear
+			data: blog
 		}).done(function(data){
-			$table.append(
-			    '<tr id="' + data._id + '"> \
-				<td>' + data.name + '</td>\
-				<td>' + data.age + '</td>\
-				<td>' + data.gender + '</td>\
-				<td><button class="killBear" type="button" class="btn btn-primary">Kill Bear</button></td></tr>\
-			');
-		clearInput($('#name'));
-		clearInput($('#age'));
-		clearInput($('#gender'));
+			console.log(data);
+			$table.prepend(
+				'<div class="post-outer">\
+					<div class="panel panel-default">\
+					  <div class="panel-body">\
+						<h2 class="post-title entry-title">' + postTitle + '</h2>\
+						<div class="post-body">\
+							<blockquote>\
+							  <p>' + postBody + '</p>\
+							  <footer>Posted by <span>' + posterName + '</span> on <span>2015-01-01</span></footer>\
+							</blockquote>\
+						</div>\
+					  </div>\
+					</div>\
+				</div>');
 
-		$('.killBear').on('click', killBear);
+		// clearInput($('#posterName'));
+		// clearInput($('#postTitle'));
+		// clearInput($('#postBody'));
+
+		// $('#addblog').on('click', addBlog);
 		});
 	} else {
 		alert("you must fill out form");
@@ -53,10 +61,9 @@ var addBear = function(event) {
 };
 
 //clear inputs
-function clearInput ($input) {
-	$input.val("");
-}
+// function clearInput ($input) {
+// 	$input.val("");
+// }
 
-//buttons
-$('#addBear').on('click', addBear);
-$('.killBear').on('click', killBear);
+$('#addblog').on('click', addBlog);
+// $('.killblog').on('click', killblog);
