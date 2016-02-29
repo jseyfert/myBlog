@@ -10,6 +10,7 @@ var port = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(express.static('img'));
 app.use('/api', blogRouter);
 app.set('view engine', 'ejs');
 mongoose.connect('mongodb://localhost/blogs');
@@ -21,6 +22,10 @@ router.use(function(req, res, next) { // middleware to 'use' for all requests
 
 app.get('/', function(req, res){
     res.render('index', {title: 'whats up!'});
+});
+
+app.get('/photo', function(req, res){
+    res.render('photo', {title: 'whats up!'});
 });
 
 app.get('/blog', function(req, res){

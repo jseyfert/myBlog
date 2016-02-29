@@ -1,4 +1,5 @@
-// app/models/bear.js
+var dateFormat = require('dateformat');
+var now = new Date();
 
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
@@ -7,7 +8,7 @@ var BlogSchema   = new Schema({
     posterName: String,
     postTitle: String,
     postBody: String,
-    postDate: String,
+    postDate: {type: String, default: dateFormat(now, "mmmm dS, yyyy")}
 });
 
 

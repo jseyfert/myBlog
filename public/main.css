@@ -1,3 +1,78 @@
-body {
-	background: lightblue;
+.sunset {
+    background: url('iceberg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#fff;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+    min-height: 300px;
 }
+
+
+.jumbotron.jumbotron-fluid {
+    background: url('bw2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#fff;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
+
+body {
+    background: url('bw2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#fff;
+    background-color:#333;
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+}
+
+.row > div {
+    padding: 8px;
+ }
+
+ html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background: url('bw2.jpg') no-repeat center center fixed;
+}
+
+.whiteText {
+  color: white;
+}
+
+.widenButtons > a {
+  /*padding-right: 120px;*/
+  margin-right: 33px;
+}
+
+.icon-africa-icon:before {
+  color: white;
+  font-size: 80px;
+}
+
+.johnny:hover {
+    color: red;
+}
+
+
+

@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Blog = require('../models/blog');
-var dateFormat = require('dateformat');
-var now = new Date();
+// var dateFormat = require('dateformat');
+// var now = new Date();
 
 router.route('/blogs')//.post()  we could also add it like this if we werent chaining
 
@@ -13,7 +13,7 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
         blog.posterName = req.body.posterName;  // set the blogs name (comes from the request)
         blog.postTitle = req.body.postTitle; 
         blog.postBody = req.body.postBody;
-        blog.postDate = dateFormat(now, "mmmm dS, yyyy"); 
+        // blog.postDate = dateFormat(now, "mmmm dS, yyyy"); 
         console.log(blog);	
         blog.save(function(err, blog) { // save(mongoos method) the blog and check for errors
         	if (err) {
