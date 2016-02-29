@@ -53,7 +53,8 @@ router.use(function(req, res, next) { // middleware to 'use' for all requests
 });
 
 app.get('/', function(req, res){
-    res.render('index', {title: 'whats up!'});
+    var user = req.user || "no user"
+    res.render('index', {user: user});
 });
 
 app.get('/photo', function(req, res){

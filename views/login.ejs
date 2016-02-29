@@ -14,8 +14,17 @@
   </head>
   <body>
 
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      
+   <% if (message.length > 0) { %>
+       <div class="alert alert-danger"><%= message %></div>
+   <% } %>
   
-<form action="/signup" method="POST">
+<form action="/login" method="POST">
   <fieldset class="form-group">
     <label for="email">Email</label>
     <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
@@ -27,6 +36,11 @@
   </fieldset>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+    </div>
+  </div>
+</section>
+
+
 
 
 
