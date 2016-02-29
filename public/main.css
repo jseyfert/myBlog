@@ -1,4 +1,4 @@
-.sunset {
+/*.sunset {
     background: url('iceberg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -32,7 +32,7 @@ body {
     background-color:#333;
     font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
-
+*/
 .row > div {
     padding: 8px;
  }
@@ -56,9 +56,9 @@ body {
   background: url('bw2.jpg') no-repeat center center fixed;
 }
 
-.whiteText {
+/*.whiteText {
   color: white;
-}
+}*/
 
 .widenButtons > a {
   /*padding-right: 120px;*/

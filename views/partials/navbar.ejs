@@ -1,0 +1,26 @@
+ <div class="pos-f-t">
+    <div class="collapse" id="">
+        <div class="container-fluid sunset p-a-1">
+            <div class="btn-group" role="group" aria-label="Basic example">
+            <p>REAL TALK...</p>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-light navbar-static-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+         <a class="whiteText johnny"><i class="fa fa-diamond fa-lg"></i></a>
+        </button>
+        <a class="whiteText">ABOUT</a><span> | </span>
+        <a class="whiteText">INSPIRE</a><span> | </span>
+        <a class="whiteText" href="/blog">BLOG</a> | </span>
+        <a class="whiteText" href="/login">LOGIN</a> | </span>
+        <a class="whiteText" href="/logout">LOGGOUT</a>
+        
+        <% if(user.local){ %>
+        <%= user.local.email %>
+        <% } else { %>
+        <%= user %>
+        <% } %>
+
+    </div>
+</div>
