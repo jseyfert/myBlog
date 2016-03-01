@@ -1,5 +1,5 @@
-/*.sunset {
-    background: url('iceberg.jpg') no-repeat center center fixed;
+.sunset {
+    background: url('http://img13.deviantart.net/6f9c/i/2009/236/b/7/a_pretty_cool_background_by_pharmacist151.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7,12 +7,12 @@
     color:#fff;
     background-color:#333;
     font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
-    min-height: 300px;
+    min-height: 600px;
 }
 
 
 .jumbotron.jumbotron-fluid {
-    background: url('bw2.jpg') no-repeat center center fixed;
+    background: url('http://www.pptback.com/uploads/black-floral-patterns-backgrounds-powerpoint.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,7 +23,7 @@
 }
 
 body {
-    background: url('bw2.jpg') no-repeat center center fixed;
+    background: url('http://www.pptback.com/uploads/black-floral-patterns-backgrounds-powerpoint.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -32,7 +32,7 @@ body {
     background-color:#333;
     font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
 }
-*/
+
 .row > div {
     padding: 8px;
  }
@@ -56,29 +56,40 @@ body {
   background: url('bw2.jpg') no-repeat center center fixed;
 }
 
-/*.whiteText {
-  color: white;
-}*/
-
 .widenButtons > a {
   /*padding-right: 120px;*/
   margin-right: 33px;
 }
 
-.makebigger:before {
-  /*color: white;*/
-  font-size: 80px;
-  /*text-decoration: underline;*/
+.whiteText {
+  color: white;
 }
 
-.makebigger:hover {
-      /*color: #FFFFFF;*/
-    text-decoration: none;
+.makeBigger:before {
+  font-size: 111px;
 }
-a:hover {
+
+.makeEvenBigger:before {
+  font-size: 130px;
+}
+
+.makeBigger:hover {
+  color: #0B4787;
+  text-decoration: none;
+}
+
+.makeEvenBigger:hover {
+  color: #0B4787;
+  text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 
+.johnny {
+    color: black;
+}
 .johnny:hover {
     color: red;
 }

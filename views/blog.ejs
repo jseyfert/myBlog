@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>My First App</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" href="main.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="jumbotron">
-				<div class="container">
-					<h1>My Blog</h1>
-					<a href="/" class="btn btn-info btn-lg">Home</a>
-					<a href="/blog" class="btn btn-info btn-lg">Blog</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://file.myfontastic.com/ScGBhhGWWosoc9ykTwYMG3/icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+
+<%- include partials/navbar.ejs %>
+
+
 
 <section>
 	<div class="container">
@@ -100,12 +98,17 @@
 	</div>
 </section>
 
-	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="app.js"></script>
-</body>
-</html>
 
+<%- include partials/footer.ejs %>
+
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-2.2.0.js"></script> -->
+	<!-- <script src="app.js"></script> -->
+  </body>
+</html>
 
 
 

@@ -1,26 +1,35 @@
  <div class="pos-f-t">
-    <div class="collapse" id="">
+    <div class="collapse" id="navbar-header">
         <div class="container-fluid sunset p-a-1">
             <div class="btn-group" role="group" aria-label="Basic example">
-            <p>REAL TALK...</p>
+            <p>...</p>
             </div>
         </div>
     </div>
     <div class="navbar navbar-light navbar-static-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
-         <a class="whiteText johnny"><i class="fa fa-diamond fa-lg"></i></a>
+         <a class="whiteText johnny">
+         <i class="fa fa-diamond fa-lg"></i>
+         <i class="fa fa-diamond fa-lg"></i>
+         </a>
         </button>
-        <a class="whiteText">ABOUT</a><span> | </span>
-        <a class="whiteText">INSPIRE</a><span> | </span>
+        <a class="whiteText" href="/">ABOUT</a><span> | </span>
+        <a class="whiteText" href="/photo">INSPIRE</a><span> | </span>
         <a class="whiteText" href="/blog">BLOG</a> | </span>
-        <a class="whiteText" href="/login">LOGIN</a> | </span>
-        <a class="whiteText" href="/logout">LOGGOUT</a>
         
+        <div class="btn-group dropdown-menu-right">
+          <a class="whiteText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if(user.local){ %>
         <%= user.local.email %>
         <% } else { %>
         <%= user %>
         <% } %>
-
+        <i class="fa fa-key"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/login">Login</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+        </div>
     </div>
 </div>

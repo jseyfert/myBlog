@@ -53,27 +53,30 @@ router.use(function(req, res, next) { // middleware to 'use' for all requests
 });
 
 app.get('/', function(req, res){
-    var user = req.user || "no user"
+    var user = req.user || "no user";
     res.render('index', {user: user});
 });
 
 app.get('/photo', function(req, res){
-    res.render('photo', {title: 'whats up!'});
+    res.render('photo', {user: 'whats up!'});
 });
 
+// app.get('/blog', function(req, res){
+//     res.render('blog', {user: 'whats up!'});
+// });
 
 app.get('/blog', function(req, res){
-
     Blog.find(function(err, blogs) {
             if (err) {
                 res.json(err);
             } else {
                 var reverseBlog = blogs.reverse();
                 // console.log(reverseBlog);
-                res.render('blog', {blogList: reverseBlog});
+                res.render('blog', {blogList: reverseBlog, user: 'user'});
                 // console.log(blogs);
             } 
         });
+    // res.render('blog', {user: 'whats up!'});
 });
 
 app.listen(port);
