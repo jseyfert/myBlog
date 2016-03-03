@@ -8,13 +8,20 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
 
     // create a blog 
     .post(function(req, res) {
-
+    	var user= req.user || 'no user';
+    	// console.log('CURRENT USER IS ', user);
         var blog = new Blog();      // create a new instance of the Bear model
-        blog.posterName = req.body.posterName;  // set the blogs name (comes from the request)
+        
+        blog.posterUser = req.user || 'no user';
+        // console.log(user);
+        blog.postAuthor = req.user_id || "56d5d32689d7e4617e000001";
+
+        blog.posterName = req.body.posterName;  
         blog.postTitle = req.body.postTitle; 
         blog.postBody = req.body.postBody;
+        blog.postImage = req.body.postImage;
         // blog.postDate = dateFormat(now, "mmmm dS, yyyy"); 
-        console.log(blog);	
+        // console.log(blog);	
         blog.save(function(err, blog) { // save(mongoos method) the blog and check for errors
         	if (err) {
         		res.json(err);
@@ -25,8 +32,9 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
     })
 
     .get(function(req, res) { // get bears from DB
-    	// console.log(req);
-    	Blog.find(function(err, blogs) {
+    	Blog.find()
+    	.populate('author')
+    	.exec(function(err, blogs) {
     		if (err) {
     			res.json(err);
     		} else {

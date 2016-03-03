@@ -1,12 +1,39 @@
+<!-- <nav class="navbar navbar-light bg-faded">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+          ☰
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="navbar-header">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> -->
+
  <div class="pos-f-t">
     <div class="collapse" id="navbar-header">
         <div class="container-fluid sunset p-a-1">
             <div class="btn-group" role="group" aria-label="Basic example">
-            <p>...</p>
+            <p></p>
             </div>
         </div>
     </div>
-    <div class="navbar navbar-light navbar-static-top">
+    <div class="nav navbar-nav navbar-right para-text">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
          <a class="whiteText johnny">
          <i class="fa fa-diamond fa-lg"></i>
@@ -15,21 +42,22 @@
         </button>
         <a class="whiteText" href="/">ABOUT</a><span> | </span>
         <a class="whiteText" href="/photo">INSPIRE</a><span> | </span>
-        <a class="whiteText" href="/blog">BLOG</a> | </span>
+        <a class="whiteText" href="/blog">BLOG</a>
         
-        <div class="btn-group dropdown-menu-right">
+        <div class="form-inline pull-xs-right">
           <a class="whiteText" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if(user.local){ %>
         <%= user.local.email %>
         <% } else { %>
         <%= user %>
         <% } %>
-        <i class="fa fa-key"></i>
           </a>
           <div class="dropdown-menu">
+            <a class="dropdown-item" href="/signup">SignUp</a>
             <a class="dropdown-item" href="/login">Login</a>
             <a class="dropdown-item" href="/logout">Logout</a>
           </div>
         </div>
     </div>
 </div>
+

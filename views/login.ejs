@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://file.myfontastic.com/mrF6RxNDi9duUBHWghubNY/icons.css" rel="stylesheet">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="login.css">
   </head>
   <body>
 
@@ -18,35 +18,10 @@
 <%- include partials/navbar.ejs %>
 
 
-<section>
-  <div class="container">
-    <div class="row">
-      
-   <% if (message.length > 0) { %>
-       <div class="alert alert-danger"><%= message %></div>
-   <% } %>
-  
-<form action="/login" method="POST">
-  <fieldset class="form-group">
-    <label for="email">Email</label>
-    <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
-    <small class="text-muted">We'll never share your email with anyone else.</small>
-  </fieldset>
-  <fieldset class="form-group">
-    <label for="password">Password</label>
-    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-  </fieldset>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    </div>
-  </div>
-</section>
-
-<div class="alert alert-danger"><test/div>
+<%- include partials/login.ejs %>
 
 
-
-
+<%- include partials/footer.ejs %>
 
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
