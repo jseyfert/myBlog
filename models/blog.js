@@ -10,8 +10,8 @@ var BlogSchema   = new Schema({
     postBody: String,
     postImage: String,
     postDate: {type: String, default: dateFormat(now, 'mmmm dS, yyyy')},
-    postAuthor: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
-
+    postAuthor: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
 

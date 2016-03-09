@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Comment = require('../models/comment');
 var Blog = require('../models/blog');
 // var dateFormat = require('dateformat');
 // var now = new Date();
@@ -13,7 +14,6 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
         var blog = new Blog();      // create a new instance of the Bear model
         
         blog.posterUser = req.user || 'no user';
-        // console.log(user);
         blog.postAuthor = req.user_id || "56d5d32689d7e4617e000001";
 
         blog.posterName = req.body.posterName;  
@@ -33,7 +33,8 @@ router.route('/blogs')//.post()  we could also add it like this if we werent cha
 
     .get(function(req, res) { // get bears from DB
     	Blog.find()
-    	.populate('author')
+      .populate('author')
+    	.populate('comments')
     	.exec(function(err, blogs) {
     		if (err) {
     			res.json(err);
@@ -88,15 +89,31 @@ router.route('/blogs/:blog_id') //router.route is express terminology
 		});
 	});
 
-	// .delete(function(req, res) { //delete bear by specific id
-	// 		 // console.log(res);
-	// 	Blog.remove({_id: req.params.blog_id}, function(err, blog) {
-	// 		if (err) {
-	// 			res.json(err);
-	// 		} else {
-	// 			res.json({title: 'deleted'});
-	// 		}
-	// 	});
-	// });
+router.route('/blogs/:blog_id/comment')
+    .post(function(req, res) {
+      var comment = new Comment();
+      console.log(req.body.body);
+      comment.body = req.body.body || 'none';
+      comment.user = '56d5d32689d7e4617e000001';
+      comment.blog = req.params.blog_id;
+      comment.save(function(err, com){
+        if(err){
+          res.send(err);
+        } else {
+          // res.json(com);
+          Blog.findById(req.params.blog_id, function(err, post){
+            if(err){
+              res.send(err);
+            } else {
+              post.comments.push(com._id);
+              post.save();
+              res.json(com);
+            }
+          })
+        }
+      })
+  });
+
+
 
 	module.exports = router;

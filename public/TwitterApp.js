@@ -6,13 +6,17 @@ var TwitterApp = React.createClass({
 	getInitialState: function() {
 		return {
 			tweets: [],
-			keyword: 'trump'
+			keyword: 'yes'
 		}
 	},	
-	loadTweetsFromServer: function() {
+	onKeywordSubmit: function (newKeyword) {
+		this.setState ({keyword: newKeyword})
+		this.loadTweetsFromServer(newKeyword);
+	},
+	loadTweetsFromServer: function(keyword) {
 		self = this;
 		$.ajax({
-			url: this.props.url + this.state.keyword,
+			url: this.props.url + keyword,
 			method: 'GET'
 		}).done(function(d){
 			self.setState({
@@ -21,12 +25,12 @@ var TwitterApp = React.createClass({
 		})
 	},	
 	componentDidMount: function() {
-		this.loadTweetsFromServer()
+		this.loadTweetsFromServer(this.state.keyword)
 	},
 	render: function() {
 		return (
 			<div className="TwitterApp">
-			<TwitterSeachBar />
+			<TwitterSeachBar onKeywordSubmit={this.onKeywordSubmit}/>
 			<TwitterBox tweetsArray={this.state.tweets}/>
 			</div>
 		);
